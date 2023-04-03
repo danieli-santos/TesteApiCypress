@@ -5,6 +5,7 @@ module.exports = defineConfig({
     //baseUrl: 'https://api.openweathermap.org/data/2.5/'
     setupNodeEvents(on, config) {
       // implement node event listeners here
+      vedeio:false
     },
   },
 });
