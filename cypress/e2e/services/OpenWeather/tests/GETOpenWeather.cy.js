@@ -61,7 +61,7 @@ describe('Obter o clima', () => {
         })
     });
 
-        it('Verificar se a temperatura mínima é numérica', () => {
+        it('Verificar se a temperatura mínima é numérica', {tag:'TempNumerica'}, () => {
             GETOpenWeather.openWeather().should((response)=> {
             expect(response.body)
             expect(response.body.main.temp_min).to.be.a('number')
