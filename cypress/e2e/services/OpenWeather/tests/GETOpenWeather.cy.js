@@ -43,16 +43,29 @@ describe('Obter o clima', () => {
 
         })
     });
-    it('Teste de valores extremos', () => {
+    it('Teste de valores extremos',{tag: 'extremo'}, () => {
         GETOpenWeather.openWeather().should((response)=>{
             expect(response.body.main.temp_max).to.be.lessThan(400);
             expect(response.body.main.temp_min).to.be.greaterThan(150);  
         }) 
     });
-    it('Teste de respostas em diferentes idiomas', () => {
+    it('Teste de respostas em diferentes idiomas', {tag: 'idiomas'}, () => {
         GETOpenWeather.openWeather().should((response)=>{
-            expect(response.body.weather[0].description).to.eq('scattered clouds');
+            expect(response.body.weather[0].description).to.eq('few clouds');
         })      
+    });
+
+    it('Teste de dados históricos', {tag: 'smoke' }, () => {
+        GETOpenWeather.openWeather().should((response)=> {
+            expect(response.body.dt).to
+        })
+    });
+
+        it('Verificar se a temperatura mínima é numérica', () => {
+            GETOpenWeather.openWeather().should((response)=> {
+            expect(response.body)
+            expect(response.body.main.temp_min).to.be.a('number')
+        })
     });
 });
 
