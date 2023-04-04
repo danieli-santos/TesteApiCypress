@@ -51,7 +51,7 @@ describe('Obter o clima', () => {
     });
     it('Teste de respostas em diferentes idiomas', {tag: 'idiomas'}, () => {
         GETOpenWeather.openWeather().should((response)=>{
-            expect(response.body.weather[0].description).to.eq('few clouds');
+            expect(response.body.weather[0].description).to.eq('broken clouds');
         })      
     });
 
